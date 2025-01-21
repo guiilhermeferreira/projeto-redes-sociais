@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 150vh; /*vh indica altura do navegador, nesse casso como colocou 100, altura total do navegador*/
+    width: 98.75vw; /*vw indica largura do navegador, nesse casso como colocou 100, largura total do navegador*/
+    background-color: black;
+}
+
+body {
+    background-image: url('../imagens/fundo-madeira.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+main {
+    position: relative; /*Posição da figura externa, no caso a mais ampla*/
+    height: 100vh;
+}
+
+section#telefone {
+    margin-top: 150px;
+    position: absolute; /*Posição da figura interna, que está dentro do relative*/
+    top: 50%; /*top, left, right, bottom movimentam a figura interna pela página*/
+    left: 50%; /*top, left, right, bottom movimentam a figura interna pela página*/
+    transform: translate(-50%, -50%); /*Faz a transformação para que seja considerada exatamente o centro da figura interna, e não a sua "ponta".*/
+    height: 627px; /*Para saber as medidas e a imagem ficar certinha em altura, largura e completa. É só abrir a imagem lá no GIMP e usar os tamanhos de lá*/
+    width: 311px;
+    /*background-color: blue; tinha colocado o fundo azul somente para ajustar a imagem no local que quero depoos retira a cor de fundo*/
+    background-image: url('../imagens/frame-iphone.png');
+    background-repeat: no-repeat;
+}
+
+iframe#tela {
+    position: relative;
+    top: 80px;
+    left: 22px;
+    width: 269px;
+    height: 471px;
+}
+
+section#redes-sociais {
+    text-align: right;
+}
+
+section#redes-sociais > a > img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.500);
+    box-sizing: border-box;
+}
+
+section#redes-sociais > a > img:hover { /*Fazer efeito quando passar o mouse nos botões*/
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    transform: translate(-3px -3px); /*Faz os botões se moverem lentamente quando passar o mouse*/
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6); /*Aparece sombra quando passar o mouse nos botões*/
+    transition: transform 0.25s, border 0.5s; /*No transform faz com que o tempo demore um pouco para aparecer as bordas também.*/
+}
